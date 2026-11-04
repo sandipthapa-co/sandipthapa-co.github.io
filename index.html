@@ -55,9 +55,11 @@
     <div class="container nav-bar">
       <a class="wordmark" href="#top" aria-label="Sandip Thapa – back to top">SANDIP<span> THAPA</span></a>
 
-      <!-- CSS-only mobile menu: a visually hidden checkbox + label -->
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open or close the navigation menu">
-      <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+      <!-- CSS-only mobile menu using :target, so it closes by itself when a link is tapped -->
+      <span id="menu-open" class="menu-anchor"></span>
+      <span id="menu-close" class="menu-anchor"></span>
+      <a href="#menu-open" class="nav-burger" aria-label="Open the navigation menu"><span></span><span></span><span></span></a>
+      <a href="#menu-close" class="nav-close" aria-label="Close the navigation menu"><span></span><span></span></a>
 
       <nav class="site-nav" aria-label="Main navigation">
         <ul>
@@ -87,6 +89,7 @@
             <a class="btn btn-primary" href="#portfolio">Explore My Work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn-ghost" href="#contact">Get In Touch</a>
           </div>
+          <p class="avail">Available for freelance projects: graphic design, video editing, content creation, social media, and events.</p>
         </div>
 
         <div class="hero-visual">
@@ -112,6 +115,7 @@
           <p>I am a creative and detail-oriented media professional with extensive experience in television broadcasting, production management, video editing, graphic design, and visual storytelling. My background includes overseeing live and recorded productions, managing broadcast operations, coordinating teams, and creating compelling visual content.</p>
           <p>Alongside my traditional media expertise, I am interested in AI-powered content creation and modern digital workflows that make creative production more efficient, engaging, and innovative.</p>
           <p>My approach combines technical precision, creative thinking, leadership, and a commitment to delivering high-quality work.</p>
+          <p>Self-taught in video editing, graphic design, and web development, I have built my skills through years of hands-on work, and today I take on freelance projects in design, editing, content creation, social media, and events.</p>
         </div>
       </div>
 
@@ -179,6 +183,7 @@
               <li>Team management</li>
               <li>Workflow supervision</li>
               <li>Camera, lighting, and microphone setup</li>
+              <li>Event planning and coordination</li>
             </ul>
           </article>
 
@@ -191,7 +196,7 @@
               <li>Content concept development</li>
               <li>Visual storytelling with AI tools</li>
               <li>AI-assisted creative experimentation</li>
-              <!-- To update: add a new <li> for each AI tool you actually use, e.g. <li>Tool name</li> -->
+              <li>Social media content planning and management</li>
             </ul>
             <p class="card-note">A growing skill area, updated as I add tools and projects.</p>
           </article>
@@ -232,6 +237,23 @@
           <li class="tl-item">
             <article class="card">
               <header>
+                <p class="tl-date">Present</p>
+                <h3>Freelance Creative Professional</h3>
+                <p class="tl-org">Independent · Self-employed</p>
+              </header>
+              <ul>
+                <li>Providing graphic design, video editing, and content creation services for brands, businesses, and events.</li>
+                <li>Managing social media handles, including content planning, post design, and publishing.</li>
+                <li>Planning and managing events, from coordination and on-site support to visual content.</li>
+                <li>Creating social media posts, promotional graphics, and digital marketing materials tailored to each client's brand identity.</li>
+                <li>Bringing 8 years of broadcasting and production experience to every project.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="tl-item">
+            <article class="card">
+              <header>
                 <p class="tl-date">May 2025 – August 2026</p>
                 <h3>Production Head</h3>
                 <p class="tl-org">Times Broadcasting Network</p>
@@ -259,6 +281,20 @@
             </article>
           </li>
 
+           <li class="tl-item">
+            <article class="card">
+              <header>
+                <p class="tl-date">May 2022 – October 2023</p>
+                <h3>Web Development</h3>
+                <p class="tl-org">Independent · Self-taught</p>
+              </header>
+              <ul>
+                <li>Designed and hand-coded websites using HTML5 and CSS3.</li>
+                <li>Built responsive, accessible layouts that work on desktop, tablet, and mobile.</li>
+              </ul>
+            </article>
+          </li>
+
           <li class="tl-item">
             <article class="card">
               <header>
@@ -276,28 +312,14 @@
           <li class="tl-item">
             <article class="card">
               <header>
-                <!-- Please double-check these dates: a February 2010 start is before your 2015 SLC. -->
-                <p class="tl-date">February 2010 – August 2025</p>
-                <h3>Freelance Graphic Designer</h3>
-                <p class="tl-org">Independent</p>
+                <p class="tl-date">2010 – 2026</p>
+                <h3>Shop Operations &amp; Customer Service</h3>
+                <p class="tl-org">Fulbari Coffee Shop · Family business</p>
               </header>
               <ul>
-                <li>Created social media posts, promotional graphics, and digital marketing materials.</li>
-                <li>Developed visual designs tailored to client needs and brand identities.</li>
-              </ul>
-            </article>
-          </li>
-
-          <li class="tl-item">
-            <article class="card">
-              <header>
-                <p class="tl-date">February 2010 – August 2026</p>
-                <h3>Family Business</h3>
-                <p class="tl-org">Fulbari Coffee Shop</p>
-              </header>
-              <ul>
-                <li>Supported daily operations, customer service, sales, billing, and order handling.</li>
+                <li>Worked in the shop every day, running daily operations, serving customers, and handling sales, billing, and orders.</li>
                 <li>Assisted with food and beverage service, inventory, and deliveries.</li>
+                <li>Built a strong work ethic, reliability, and customer communication skills.</li>
               </ul>
             </article>
           </li>

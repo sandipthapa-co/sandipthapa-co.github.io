@@ -213,12 +213,6 @@ a:hover { color: #fff; }
 .site-nav ul a:hover::after { transform: scaleX(1); }
 
 /* CSS-only mobile menu (checkbox + label); shown in section 16 */
-.nav-toggle {
-  position: absolute; right: 0; top: 50%;
-  width: 46px; height: 46px; margin: -23px 0 0;
-  opacity: 0; cursor: pointer; z-index: 3;
-  display: none;
-}
 .nav-burger {
   display: none;
   width: 46px; height: 46px;
@@ -226,7 +220,21 @@ a:hover { color: #fff; }
   border: 1px solid var(--border-strong); border-radius: 12px;
 }
 .nav-burger span { width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: transform var(--ease), opacity var(--ease); }
-.nav-toggle:focus-visible + .nav-burger { outline: 3px solid #8fb4ff; outline-offset: 3px; }
+
+/* Mobile menu open/close links (:target) */
+.menu-anchor { position: fixed; top: 0; left: 0; width: 0; height: 0; }
+.nav-close {
+  display: none;
+  position: relative;
+  width: 46px; height: 46px;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--border-strong); border-radius: 12px;
+}
+.nav-close span { position: absolute; width: 20px; height: 2px; background: #fff; border-radius: 2px; }
+.nav-close span:nth-child(1) { transform: rotate(45deg); }
+.nav-close span:nth-child(2) { transform: rotate(-45deg); }
+.nav-burger:focus-visible,
+.nav-close:focus-visible { outline: 3px solid #8fb4ff; outline-offset: 3px; }
 
 /* 6. HERO ---------------------------------------------------------------- */
 .hero {
@@ -282,6 +290,14 @@ a:hover { color: #fff; }
 @keyframes cue {
   0%, 100% { transform: scaleY(0.4); transform-origin: top; opacity: 0.5; }
   50% { transform: scaleY(1); opacity: 1; }
+}
+
+.avail {
+  margin: var(--space-3) 0 0;
+  max-width: 34rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 /* 7. ABOUT --------------------------------------------------------------- */
@@ -779,7 +795,6 @@ a:hover { color: #fff; }
 
 @media (max-width: 900px) {
   /* Mobile navigation (CSS only) */
-  .nav-toggle { display: block; }
   .nav-burger { display: flex; }
   .site-nav {
     position: absolute; top: 100%; left: -1.5rem; right: -1.5rem;
@@ -794,11 +809,10 @@ a:hover { color: #fff; }
   .site-nav ul a { display: block; padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 1.05rem; }
   .site-nav ul a::after { display: none; }
   .site-nav .btn { margin-top: var(--space-1); }
-  .nav-toggle:checked ~ .site-nav { max-height: 520px; padding-block: var(--space-2) var(--space-3); visibility: visible; }
-  .nav-toggle:checked + .nav-burger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .nav-toggle:checked + .nav-burger span:nth-child(2) { opacity: 0; }
-  .nav-toggle:checked + .nav-burger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
+  #menu-open:target ~ .site-nav { max-height: 520px; padding-block: var(--space-2) var(--space-3); visibility: visible; }
+  #menu-open:target ~ .nav-burger { display: none; }
+  #menu-open:target ~ .nav-close { display: flex; }
+  
   .hero { padding-block: var(--space-4) 6rem; min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; gap: var(--space-4); }
   .hero-visual { order: -1; }
